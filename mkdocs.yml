@@ -1,0 +1,104 @@
+site_name: LotusNotus Türkçe (Arşiv)
+site_url: https://tr.lotusnotus.com
+site_author: Serdar Başeğmez
+site_description: >
+  LotusNotus Türkçe, LotusNotus blogunun Türkçe kısmının arşividir.
+copyright: >
+  &copy; 2010 - 2025 Serdar Basegmez – <a href="#__consent">Çerez ayarlarını değiştir</a>
+repo_name: sbasegmez/lotusnotus-tr
+repo_url: https://github.com/sbasegmez/lotusnotus-tr
+theme:
+  name: material
+  custom_dir: overrides
+  language: tr
+  icon:
+    repo: material/github
+  palette: 
+    scheme: default
+    primary: grey
+    accent: light blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: images/meta/favicon.ico
+  logo: images/meta/ln_logo.png
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.share
+extra_css:
+  - css/extra.css
+extra:
+  consent:
+    title: Çerez kullanımı
+    description: >- 
+      Tekrar ziyaretlerinizi ve tercihlerinizi tanımak ve blogumuzun performansını anlamamıza yardımcı olmak için çerezleri kullanıyoruz. Bu amaçla üçüncü taraf araçları da kullanabiliriz. Onayınızla, tüm okuyucularımız için deneyimi iyileştirmemize katkıda bulunuyorsunuz.
+    actions:
+      - accept
+      - reject
+  social:
+    - icon: fontawesome/brands/github
+      name: Serdar Basegmez on GitHub
+      link: https://github.com/sbasegmez
+    - icon: fontawesome/brands/bluesky
+      name: Serdar Basegmez on Bluesky
+      link: https://bsky.app/profile/serdar.uk
+    - icon: fontawesome/brands/linkedin
+      name: Serdar Basegmez on LinkedIn
+      link: https://www.linkedin.com/in/sbasegmez/
+    - icon: fontawesome/brands/twitter
+      name: Serdar Basegmez on Twitter
+      link: https://twitter.com/serdar_basegmez
+    - icon: fontawesome/brands/speaker-deck
+      name: Serdar Basegmez on Speaker Deck
+      link: https://speakerdeck.com/sbasegmez
+plugins:
+  - blog:
+      enabled: true
+      blog_dir: .
+      post_date_format: long
+      post_url_date_format: yyyy/MM
+      post_url_format: '{date}/{slug}/'
+      post_slugify_separator: "-"
+      archive_name: Eski Yazılar
+      archive_toc: true
+      blog_toc: true
+  - glightbox:
+      enabled: true
+  - meta:
+      enabled: true
+  - rss:
+      enabled: true
+      match_path: docs/posts/.*
+      date_from_meta:
+        as_creation: date
+  - privacy:
+      enabled: true
+      concurrency: 1
+      cache: true
+      assets: true
+      assets_fetch: true
+  - search:
+      lang: en
+      separator: '[\s\-]+'
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
