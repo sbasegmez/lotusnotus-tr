@@ -1,4 +1,4 @@
-site_name: LotusNotus Türkçe (Arşiv)
+site_name: Lotus Notus Türkçe (Arşiv)
 site_url: https://tr.lotusnotus.com
 site_author: Serdar Başeğmez
 site_description: LotusNotus Türkçe, LotusNotus blogunun Türkçe yazılarının arşividir.
@@ -25,12 +25,18 @@ theme:
     - content.code.copy
     - content.code.select
     - content.code.annotate
+    - navigation.top
+    - navigation.expand
+    - navigation.instant
     - toc.integrate
     - search.suggest
     - search.highlight
     - search.share
 extra_css:
   - css/extra.css
+nav:
+  - index.md
+  - 'Lotus Notus English': 'https://lotusnotus.com'
 extra:
   consent:
     title: Çerez kullanımı
