@@ -1,8 +1,7 @@
 site_name: LotusNotus Türkçe (Arşiv)
 site_url: https://tr.lotusnotus.com
 site_author: Serdar Başeğmez
-site_description: >
-  LotusNotus Türkçe, LotusNotus blogunun Türkçe kısmının arşividir.
+site_description: LotusNotus Türkçe, LotusNotus blogunun Türkçe yazılarının arşividir.
 copyright: >
   &copy; 2010 - 2025 Serdar Basegmez – <a href="#__consent">Çerez ayarlarını değiştir</a>
 repo_name: sbasegmez/lotusnotus-tr
@@ -67,15 +66,8 @@ plugins:
       archive_name: Eski Yazılar
       archive_toc: true
       blog_toc: true
-  - glightbox:
-      enabled: true
   - meta:
       enabled: true
-  - rss:
-      enabled: true
-      match_path: docs/posts/.*
-      date_from_meta:
-        as_creation: date
   - privacy:
       enabled: true
       concurrency: 1
