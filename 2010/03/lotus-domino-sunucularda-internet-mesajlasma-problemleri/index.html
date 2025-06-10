@@ -1,0 +1,936 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LotusNotus Türkçe, LotusNotus blogunun Türkçe yazılarının arşividir.">
+      
+      
+        <meta name="author" content="Serdar Başeğmez">
+      
+      
+        <link rel="canonical" href="https://tr.lotusnotus.com/2010/03/lotus-domino-sunucularda-internet-mesajlasma-problemleri/">
+      
+      
+        <link rel="prev" href="../../02/lotus-notes-8.5.1-password-policy-sorunu/">
+      
+      
+        <link rel="next" href="../ibm-lotus-yazilim-grubu-kontrollu-dagitim-modelini-genisletiyor/">
+      
+      
+      <link rel="icon" href="../../../images/meta/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Lotus Domino Sunucularda Internet Mesajlaşma Problemleri - Lotus Notus Türkçe (Arşiv)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="../../.." title="Lotus Notus Türkçe (Arşiv)" class="md-header__button md-logo" aria-label="Lotus Notus Türkçe (Arşiv)" data-md-component="logo">
+      
+  <img src="../../../images/meta/ln_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lotus Notus Türkçe (Arşiv)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lotus Domino Sunucularda Internet Mesajlaşma Problemleri
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Paylaş" aria-label="Paylaş" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+
+    <div class="md-header__social">
+      <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/sbasegmez" target="_blank" rel="noopener" title="Serdar Basegmez on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/serdar.uk" target="_blank" rel="noopener" title="Serdar Basegmez on Bluesky" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/sbasegmez/" target="_blank" rel="noopener" title="Serdar Basegmez on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/serdar_basegmez" target="_blank" rel="noopener" title="Serdar Basegmez on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://speakerdeck.com/sbasegmez" target="_blank" rel="noopener" title="Serdar Basegmez on Speaker Deck" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M213.86 296H100a100 100 0 0 1 0-200h132.84a40 40 0 0 1 0 80H98c-26.47 0-26.45 40 0 40h113.82a100 100 0 0 1 0 200H40a40 40 0 0 1 0-80h173.86c26.48 0 26.46-40 0-40M298 416a120.2 120.2 0 0 0 51.11-80h64.55a19.83 19.83 0 0 0 19.66-20V196a19.83 19.83 0 0 0-19.66-20H296.42a60.77 60.77 0 0 0 0-80h136.93c43.44 0 78.65 35.82 78.65 80v160c0 44.18-35.21 80-78.65 80z"/></svg>
+    </a>
+  
+</div>
+    </div>
+
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+    
+        
+            
+        
+        <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+            <div class="md-sidebar__scrollwrap">
+                <div class="md-sidebar__inner">
+                    <div class="md-post__authors md-typeset">
+    <div class="md-profile md-post__profile">
+        <span class="md-author md-author--long">
+            <img src="/images/meta/avatar.png" alt="Serdar Basegmez">
+        </span>
+        <span class="md-profile__description">
+            <strong>
+                Serdar Basegmez
+            </strong>
+            <br>
+            <a href="https://developi.com" target="_blank">Developi</a>
+        </span>
+    </div>
+</div> 
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigasyon" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lotus Notus Türkçe (Arşiv)" class="md-nav__button md-logo" aria-label="Lotus Notus Türkçe (Arşiv)" data-md-component="logo">
+      
+  <img src="../../../images/meta/ln_logo.png" alt="logo">
+
+      Lotus Notus Türkçe (Arşiv)     
+    </a>
+    
+  </label>
+
+
+  <div class="md-nav__social">
+    <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/sbasegmez" target="_blank" rel="noopener" title="Serdar Basegmez on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://bsky.app/profile/serdar.uk" target="_blank" rel="noopener" title="Serdar Basegmez on Bluesky" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/sbasegmez/" target="_blank" rel="noopener" title="Serdar Basegmez on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/serdar_basegmez" target="_blank" rel="noopener" title="Serdar Basegmez on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://speakerdeck.com/sbasegmez" target="_blank" rel="noopener" title="Serdar Basegmez on Speaker Deck" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M213.86 296H100a100 100 0 0 1 0-200h132.84a40 40 0 0 1 0 80H98c-26.47 0-26.45 40 0 40h113.82a100 100 0 0 1 0 200H40a40 40 0 0 1 0-80h173.86c26.48 0 26.46-40 0-40M298 416a120.2 120.2 0 0 0 51.11-80h64.55a19.83 19.83 0 0 0 19.66-20V196a19.83 19.83 0 0 0-19.66-20H296.42a60.77 60.77 0 0 0 0-80h136.93c43.44 0 78.65 35.82 78.65 80v160c0 44.18-35.21 80-78.65 80z"/></svg>
+    </a>
+  
+</div>
+  </div>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ana Sayfa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://lotusnotus.com" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lotus Notus English
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Eski Yazılar
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Eski Yazılar
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2015/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2015
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2014/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2014
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2013
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2012/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2012
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2011
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/2010/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2010
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                </div>
+            </div>
+        </div>
+    
+
+    
+
+
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../.." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Dizine geri dön
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            
+            <div class="md-post__authors md-typeset">
+    <div class="md-profile md-post__profile">
+        <span class="md-author md-author--long">
+            <img src="/images/meta/avatar.png" alt="Serdar Basegmez">
+        </span>
+        <span class="md-profile__description">
+            <strong>
+                Serdar Basegmez
+            </strong>
+            <br>
+            <a href="https://developi.com" target="_blank">Developi</a>
+        </span>
+    </div>
+</div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2010-03-01 18:00:00+02:00" class="md-ellipsis">1 Mart 2010</time>
+                      </div>
+                    </li>
+                    
+                    
+
+                    
+                    
+
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              13 dakika okuma
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+
+
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+            
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+  
+</nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+  
+  
+
+
+  <h1>Lotus Domino Sunucularda Internet Mesajlaşma Problemleri</h1>
+
+<p>Bir süredir yazamıyordum çünkü bu uzun yazıyla uğraşmaktaydım. Kendi çapımdaki ilk '<strong>Whitepaper</strong> ' denememi de yapmış oldum. Bu yazıyı kullanıcı grubunda açmayı düşündüğüm wiki bölümüne yerleştirip geliştirmeye açmak istiyorum. Umarım okuyuculardan da bol miktarda katkı alabilirim bu konuda...</p>
+<p>Lotus Domino sunucular internet adreslerine gönderilen mesajları SMTP protokolü üzerinden gönderirler. IBM yazılım destek ekibi, zaman zaman karş ılaştığımız SMTP problemlerinde neleri kontrol edebileceğimiz konusunda küçük bir doküman oluşturmuşlar. Özellikle DNS problemlerine eğilen "<a href="http://www.ibm.com/support/docview.wss?rs=899&amp;uid=swg21420956">One stop shop for troubleshooting Domino and DNS</a>" konulu dokümana ek olarak benim de bazı önerilerim olacak.</p>
+<p>Öncelikle kısaca "SMTP Routing" sürecinden ve DNS fonksiyonlarının nasıl işlediğinden bahsetmek gerekiyor. Sonrasında kısaca MIME ile ilgili bir kaç detayı anlatalım. Çünkü sıklıkla karşılaştı ğım sorunlar, Türkçe karakter ve kodlama problemleri. Biraz teknik detaylara gömüleceğiz ama umarım faydalı olur. Bildiğiniz kısımları atlayabilirsiniz :)</p>
+<!-- more -->
+
+<p><strong>I.DNS ve MX Kayıtları</strong></p>
+<p>DNS sunucular her alan adı için bir takım kayıtlar barındırırlar. Bu kayıtlardan 'A' kaydı 'Address Record' olarak adlandırılır ve bu alan adına bağlı sunucu adreslerinin IP karşılığını tutar. Örneğin 'milliyet.com.tr' alan adının 'www' isimli 'A' kaydına bakarsak (www.milliyet.com.tr adresinin karşılığıdır) '83.66.140.10' IP adresine ulaşırız. Internet tarayıcımızın adres bölümüne 'www.milliyet.com.tr' yazdığımızda sayfanın hangi web sunucusundan geleceği bu DNS sorgusuyla bulunur.</p>
+<p>'<strong>MX</strong> ' kaydı ise 'Mail Exchange Record' olarak adlandırılır ve bu alan adına adreslenen SMTP mesajlarının nereye gönderileceğini belirler. 'MX' kayıtları her alan adı için birden fazla olabilir. Bir alan ad ının bir kaç alternatif mesaj sunucusu olabildiği gibi alt alan adlarının da ayrı MX kayıtları tanımlanabilmektedir. Bu ikincisi bugünlerde pek kullanılmıyor çünkü E-mail adreslerinin basitliği daha önemli diye düşün ülüyor. Fakat eskiden merkezi yönetimin olmadığı üniversitelerde farklı böl üm/fakülteler kendi mail sunucularını işletirlerdi. Örneğin benim öğrencili ğimde üniversitede Bilgisayar Mühendisliği öğrencileri uzunca bir süre '<em>isim@mercan.cmpe.boun.edu.tr</em> ' gibi e-mail adresleri kullandılar. Deniz ürünü isimleri verilen sunucuları Bilgisayar Mühendisliği asistanları ve öğrencileri yönetiyordu. Bazı şirketler de ülke bazında alt alan adları kullanarak hem yük dağılımını bu yolla yapmakta, hem de yönetimi alt birimlere bölmeyi amaçlamaktalar. En yakın örnek olan IBM, her ülke için farklı adresleme kullanmaktadır: MX kayıtlarına bakarsanız '<em>xxx@tr.ibm.com</em> ' adresleri Almanya sunucularını, '<em>yyy@us.ibm.com</em> ' adresleri Amerika sunucularını işaret eder.</p>
+<p>MX kayıtları aynı alan adı için yük dağılımı (load-balancing) ve/veya süreklilik sağlama (fail-over) amacıyla da kullanılabilir. Örneğin developi.com alan adının MX kayıtlarını sorgularsak:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>developi.com    MX preference = 1, mail exchanger = developi.com.s200a1.psmtp.com
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>developi.com    MX preference = 2, mail exchanger = developi.com.s200a2.psmtp.com
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>developi.com    MX preference = 3, mail exchanger = developi.com.s200b1.psmtp.com
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>developi.com    MX preference = 4, mail exchanger = developi.com.s200b2.psmtp.com
+</span></code></pre></div>
+<p><br /></p>
+<p>Burada '<strong>MX preference</strong> ', tercih etme sırasını belirler. <em>Google Postini</em> 'den servis aldığım için mesajlarım öncelikle Postini sunucuları tarafından karşılanıyor. Dört farklı lokasyondaki sunucular sırasıyla deneniyor. Herhangi birisi erişilebilir durumdaysa mesajı o alıyor. Önceliklerin eşit olması durumundaysa belirlenmiş bir kural olmamakla birlikte rastgele birinin seçilmesi yaygın bir uygulama.</p>
+<p>Linkini verdiğim dokümanda MX kayıtlarının nasıl sorgulanacağ ına dair örnekler verilmiş. Fakat bir küçük şey hatırlatmam gerekiyor. <strong>TTNet</strong> üzerinden sorgu yapıyorsanız; bazı durumlarda (örneğin TTNet Wi-Fi noktalarında) com.tr uzantılı adreslerin MX kayıtlarına doğru şekilde ulaşamıyorsunuz. Bunun SPAM gönderimine karşı bir önlem olduğunu düşünüyorum ama bu konuda resmi bir açıklama görmüş değilim. Sorgulanan alan adının sonunda '<em>mail.com.tr</em> ' gibi ekler yapıldığını görüyorsanız bu tip bir durumla karşılaşıyorsunuz demektir. En doğru ve güvenilir y öntemin internet üzerinden bu sorguları yapmanızı sağlayan siteler olduğunu söyleyebilirim. Ben bu amaçla ücretsiz servis veren <a href="http://network-tools.com/">network-tools.com</a> ve <a href="http://www.mxtoolbox.com/">mxtoolbox.com</a> sitelerini kullanıyorum. Alternatif olarak ücretli servis sunan <a href="http://www.dnsstuff.com/">DNSStuff</a> sitesi; SPAM veritabanlarında arama yapmak, DNS sunucularının sağl ıklı işlediğini test etmek gibi çok daha karmaşık analizleri yapabiliyor.</p>
+<p><strong>II.Routing ve SMTP</strong></p>
+<p>Lotus Domino, diğer mesajlaşma sunucularından farklı şeyler yapmaz. Aşağı yukarı tüm süreçler aynı şekilde işlediği için bu anlatacaklarımı başka tip sunuculara da uygulayabilirsiniz.</p>
+<p>SMTP mail gönderimi işlemini 'Router' görevi yürütür. Router'ın birincil işlevi mail.box (ya da mail(n).box) veritabanı üzerinde tutulan kuyru ğu izlemektir. Buraya bir mesaj düştüğünde öncelikle mesajın al ıcı alanları incelenir. Buna göre sürecin devamı '<strong>delivery</strong> ' (iç dağıt ım) ve '<strong>transfer</strong> ' (dışarı aktarım) olarak adlandırılır. Bu fark önemli, çünkü delivery ve transfer farklı süreçler ve farklı ayarlar gerektirir. Konfigürasyonlarda bu farklılıkları görebilirsiniz. Bizim daha çok ilgilendiğimiz 'transfer' işlemi NRPC ya da SMTP protokolleri üzerinden gerçekleşir. Çok fazla detaya girmeyeceğim. Burada çok çeşitli kombinasyon olu şabilir. Bir domino sunucu başka bir domino sunucuya SMTP üzerinden (tercih etmemekle birlikte) mesaj transfer edebilir. Ama %99 oranında geçerli olmak üzere Domino Domain içerisinde transferler <strong>NRPC</strong> üzerinden, Internet üzerindeki transferler <strong>SMTP</strong> üzerinden yürür diye genelleyebiliriz.</p>
+<p>Router, kuyruktaki mesajı inceler ve bu gönderim işini kendi görev planı içerisine yerleştirir (dispatching). Alıcı alanı incelendiğinde mesajın NRPC üzerinden mi yoksa SMTP üzerinden mi gönderileceğine karmaş ık bir mekanizmayla karar verilecektir. Örneğin alıcı adresinde '<em>Serdar Basegmez/developi@Developi</em> ' gibi 'Notes Name' formatında bir adres görüldüğünü ve sunucunun bulunduğu domain'in de 'Developi' olduğunu varsayalım. Kullanıcı bu domain i çerisinde farklı bir sunucudaysa, mesaj NRPC üzerinden iletilecektir. Burada Router'ın yapması gereken 'CN=Serdar Basegmez/O=Developi' isimli kullanıcın ın hangi sunucuda bulunduğunu belirleyip mesajı o sunucunun mail.box veritabanına yazmaktır. Eğer bu kullanıcı aynı sunucuda ise mesaj doğrudan mail veritabanına 'deliver' edilir ve kuyruktan kaldırılır.</p>
+<p>Eğer sözkonusu mesajın alıcısı 'isim@acme.com' gibi bir internet adresi ise iki alternatif bulunmaktadır. Öncelikle sunucu, içinde bulunduğu 'Local Internet Domain' bilgisinden haberdardır. Bu bilgi ya 'Global Domain' dok ümanından, o yoksa sunucu dokümanındaki '<em>Fully Qualified Internet Host Name</em> ' alanından türetilir. Eğer 'acme.com' yerel internet alan adlarından birisi ise bu adres doğrudan 'Notes Name' formatına dönüştürülüp yukarıdaki gibi işlem görür. Bu dönüştürme işi de belli bir mekanizmayla gerçekleşir. Aksi yönde bir ayar gerçekleştirilmediyse, genel adres defteri (names.nsf) üzerindeki kişi dokümanlarının 'InternetAddress' alanları incelenir. Burada verebileceğim en önemli ipucu, names.nsf veritabanı üzerinde '<strong>($Users)</strong> ' görüntüsüne bakmak olacaktır. Çünkü E-mail adresleri gruplara veya 'Mail-In Database' kayıtlarına da ait olabilir ve bu görüntü olası tüm adresleri barındırır. Yardım dokümantasyonunda (Administration Help) '<em>Specifying how Domino looks up the recipients of incoming SMTP messages</em> ' konulu bölüm bu adreslemenin ne şekilde yapıldığını ve nasıl ayarlanabileceğini uzun uzun anlatır. Eğer alıcı, yerel bir kullanıcı değilse mesajımız Internet'e gönderilecektir.</p>
+<p>Nihayet Internet'e gönderilecek bir mesaj bulduk! Ama öncelikli işimiz bu mesajı SMTP üzerinden gönderilebilecek bir formata getirmektir. Lotus Domino üzerindeki mesajlar özel bir formata sahiptir. Bu format, mesaj iletiminden ziyade doküman iletimini mümkün kılarak uygulamaların çalışmasında önemli bir rol oynamaktadır. Internet üzerinde yer alan 'zengin metin' standartı olan MIME ise Domino tarafından desteklenen bir çok özelliğe sahip değil. Dolayısıyla burada bir çevrim (conversion) gerekiyor. "MIME Conversion" işleminden geçen mesaj artık gönderime hazır. Bu çevrim işlemi sırasında kullanılacak tüm ayarlar konfigürasyon dokümanında bulunmaktadır.</p>
+<p><img alt="Image:Lotus Domino Sunucularda Internet Mesajlaşma Problemleri" src="../../../images/imported/lotus-domino-sunucularda-internet-mesajlasma-problemleri-M2.gif" /></p>
+<p>Bundan sonrası Router içerisindeki ayrı bir görev tarafından yürütülür. SMTP Router, DNS sunucuya erişerek 'acme.com' alan adına ait MX kaydını sorgular. Eğer bu alan adının MX kaydı yoksa 'acme.com' isimli 'A' kaydı aranır. Bu sorgulamalar hedef sunucuyu belirler ve bu hedef sunucuya SMTP üzerinden gönderim gerçekleştirilir. Yapılan DNS sorgusu hafızada uzun süre tutulur. Genelde yaşadığım sorunlardan birisi ilk sorguda MX kaydının bulunamaması yüzünden yaşanır. İlk seferde 'A' kaydı 'cache'lenir ve saatlerce bu adres denenir. Düzeltmek için Router görevini tekrar ba şlatmaktan başka bir şey yapılamaz.</p>
+<p>SMTP 1970'lerden, yani bilgi çağının taş devrinden kalma olduğu için 7-bitlik karakter tabanlı bir oturum kullanan çok basit bir protokoldür. Tipik bir SMTP oturumu şu şekildedir (kaynak: <a href="http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">wikipedia</a>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>S: 220 smtp.example.com ESMTP Postfix
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>C: HELO relay.example.org
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>S: 250 Hello relay.example.org, I am glad to meet you
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>C: MAIL FROM:&lt;bob@example.org&gt;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>S: 250 Ok
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>C: RCPT TO:&lt;alice@example.com&gt;
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>S: 250 Ok
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>C: RCPT TO:&lt;theboss@example.com&gt;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>S: 250 Ok
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>C: DATA
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>S: 354 End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>C: From: &quot;Bob Example&quot; &lt;bob@example.org&gt;
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>C: To: Alice Example &lt;alice@example.com&gt;
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>C: Cc: theboss@example.com
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>C: Date: Tue, 15 Jan 2008 16:02:43 -0500
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>C: Subject: Test message
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>C:
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>C: Hello Alice.
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>C: This is a test message with 5 header fields and 4 lines in the message body.
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>C: Your friend,
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>C: Bob
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>C: .
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>S: 250 Ok: queued as 12345
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>C: QUIT
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>S: 221 Bye
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>{The server closes the connection}
+</span></code></pre></div>
+<p><strong>III. Mesajlar, Kodlama ve MIME</strong></p>
+<p>Karmaşık resim, ekli dosya gibi gönderimler yaptığınızda burada harfler ve rakamlardan oluşan anlamsız şeyler görürsünüz. Bu, SMTP protokolünün eskimiş yapısından dolayı binary verilerin kodlanması gerekliliğinden kaynaklanır. Burada From, To, CC, Date, Subject gibi bölümlere '<strong>Header</strong> ' bilgileri adı verilir. SMTP standartlarını belirleyen RFC dokümanları (Internet Engineering Task Force tarafından üretilmiş standart belgeleri) bu alanların formatlarını ve kurallarını detaylarıyla anlatır.</p>
+<p>Tipik bir mesajın kaynağına bakarsanız text dosyadan oluştuğunu göreceksiniz. Aşağıda basitleşmiş bir mesaj içeriği görülüyor. Mesaj ın multipart olması -ki mesaj boyutunu arttırsa da tavsiye edilen bir kullanımdır- hem sade metin, hem de HTML formatında iki mesajın peşpeşe depolandı ğını gösteriyor. Her bir 'part'ın ayrı kodlanmış olduğunu görebilirsiniz.</p>
+<p><img alt="Image:Lotus Domino Sunucularda Internet Mesajlaşma Problemleri" src="../../../images/imported/lotus-domino-sunucularda-internet-mesajlasma-problemleri-M3.gif" /></p>
+<p>Daha önce söylediğimiz gibi SMTP, ASCII karakter seti aktarımına dayanıyor. 128 karakter haricinde kalan Türkçe karakterler gibi gelişmiş karakterlere yer yok. Bu yüzden içeriklerin 'encode' edilmeleri gerek. Yukarıdaki örnekteki '<strong>quoted-printable</strong> ' kodlamasında 'Ç' harfi 'ç' gibi bir ifadeyle değiştiriliyor. Aşağıda ise <strong>base64</strong> olarak kodlanmış bir mesaj görülüyor. Base64 binary verilerin de kodlanmasında kullanılan daha geniş olanaklara sahip bir kodlama sistemi. Fakat metin ağırlıklı mesajlarda verimsiz (%35-40 civarında boyut artışı) olduğu için tercih edilmez. Bir avantajıysa şifreli olmadığı halde gözle görüldüğünde içeriğin anlaşılamaması, dolayısıyla basit kullanıcılar tarafından okunamaması.</p>
+<p><img alt="Image:Lotus Domino Sunucularda Internet Mesajlaşma Problemleri" src="../../../images/imported/lotus-domino-sunucularda-internet-mesajlasma-problemleri-M4.gif" /></p>
+<p>'<strong>Received</strong> ' etiketine sahip header alanları sırasıyla mesajın hangi sunuculardan geçtiği konusunda bilgiler verir. Ayrıca bu alanlarda anti-spam puantajları, mesajı atan istemci tipi (<strong>X-Mailer</strong> ) gibi çok yararlı bilgilere erişebiliriz. Lotus Notes'da mesaj kaynağını görmek için View\Show\Page Source menü kombinasyonunu kullanabiliriz.</p>
+<p>Header bilgilerinden bahsetmişken tipik problemlerden birinden de bahsedelim. Türkçe karakter problemleri, SMTP protokolünün eski olması ve UTF-8 formatının yeterince yaygınlaşamaması nedeniyle oluşuyor. Aslında UTF-8 formatını, başka bir deyişle unicode formatları kullandığınızda bir sorunla karşılaşamazsınız. Çünkü bu standartlar çinceden kongocaya kadar tüm dillere ait harf ve sembolleri destekliyor. Fakat sistem yeterince yaygınlaşamayınca dünyanın yarısı bu formatı kullanmak konusunda ayak sürüyor. Sağolsun Microsoft, Yahoo gibi bir takım devler de bu ayak sürümede önemli katkılar sağl ıyor. Mesaj kaynağından metin dillerinin ne olduğuna dair bilgiler edinebiliriz.</p>
+<p>Son olarak mesajların header bilgilerinin ayrı, body kısmının ayr ı kodlandığını hatırlatalım. Zaman zaman buna benzer konularla karşılaşıyoruz. From adresinde ya da konu satırında Türkçe karakter problemi olmazken mesajın içeriğindeki problemler bu farklılıktan ileri geliyor.</p>
+<p>Bu süreçle ilgili iki önemli nokta da dönüş kodları ve '<strong>Non-Delivery Report</strong> ', ya da NDR. SMTP sürecinde her aşamada sunucu tarafından bir kod üretilir. Bu kod, örnekte gördüğümüz sunucu cevaplarında gizli. 200, 250, 221, 354 gibi 2XX ve 3XX şeklindeki kodlar normal, 4XX şeklindeki kodlar geçici hatalar ve 5XX şeklindeki kodlar kalıcı hataları belirler. Bu konuda yaygın davranış farklılıkları olmakla birlikte genelde 4XX kodlu hata kodlarında mesaj gönderimi tekrar denenir. 5XX şeklindeki kodlar ise hatanın sebebini detaylandıran bir NDR üretilerek geri döner. 'Non-Delivery Report' çok çeşitli nedenlerle oluşturulabilir. Gönderen IP'nin SPAM olarak işaretlenmesi, alıcı sunucunun mesaj boyutunu beğenmemesi, alıcı adresin sunucuda bulunamaması gibi sebepler 5XX kodlu hatalardan bir kaçıdır.</p>
+<p>Tüm bu anlattıklarımı daha zengin detaylarıyla öğrenmek isterseniz <a href="http://www.wikipedia.org/">Wikipedia</a>'da <a href="http://en.wikipedia.org/wiki/MIME">MIME</a>, <a href="http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol">SMTP</a> gibi bölümleri incelemenizi tavsiye ederim.</p>
+<p><strong>IV.Anti-Spam ve Anti-Virus Konuları</strong></p>
+<p>Lotus Domino, anti-spam konusunda bir çok ayar barındırsa da günümüzde SPAM mesajlar klasik yöntemlerle engellenemiyor. Daha zeki puanlama ve aktif izleme sistemleri gerekiyor. Konvansiyonel mekanizmaların en popüleri 'Black List' izleme yöntemi. Fakat bizim ülkemizde bu yöntem, ciddi problemlere neden oluyor. Çünkü IP adreslerimizin önemli bir kısmı uluslararası veritabanlarında kara listelere alınmış durumda. Bunu düzeltmesi gereken kurum TTNet ise bu konuda oldukça ağır davranıyor. Dolayısıyla hatalı olarak SPAM işaretlenen mesajların sayısı (false-positive) oldukça fazla oluyor. Öte yandan spam gönderenler de sürekli farklı IP adresleri kullanıyorlar. Örneğin çok klasik bir saldırı olan 'Directory Harvest Attack' yöntemi, sürekli olarak anlamlı/anlamsız e-mail adresleriyle mesaj göndermeyi deniyor. Akıllı bir anti-spam yazılımı, belirli bir yönden yüksek frekansta hatalı mesaj gönderimi durumunda bu adresleri geçici bir süre kapatmaktadır. Domino'nun anti-spam mekanizması bu kadar gelişmiş değil.</p>
+<p>Genel uygulama, mesaj girişinde farklı bir yazılım ya da cihaz (appliance) kullanımı. Müşterilerimde kullanılan çözümler arasında çok çeşitli ürünler görüyorum. Başta IBM Lotus Protector olmak üzere Trend Micro, Symantec, Cisco gibi üreticilerin bu konuda bol miktarda yazılımı ve kutu ç özümü var. Bunlara ek olarak SpamAssassin, ClamAV gibi açık kaynak kodlu yaz ılımlar da kullanılabiliyor.</p>
+<p>Bir başka alternatif ise <strong>SaaS</strong> (Software as a Service) yaklaşım ı. Türkiye'ye servis sunmakta olan Google Postini (Türkiye iş ortağı: <a href="http://www.globalit.com.tr/">Global IT</a>) ve MessageLabs (Türkiye iş ortağı <a href="http://www.seynur.com/">Seynur</a>) bu konuda incelediğim iki çözüm. Bunların haricinde Cisco, Trend ve Symantec de 'Hosted Messaging Security' adı altında benzer servisler vermeye ba şladı. SaaS modelinde herhangi bir lisans/donanım yatırımı yapılmıyor. Sistem yönetimi web platformundan yapılıyor. Kullanıcı başına fiyatlandırma yapılıyor. Bu tip sistemler aynı zamanda fail-safe mesaj alışverişi, Archiving, user-profile bazlı SPAM ayarları, mobil erişim gibi değişik özellikler de sunabiliyor.</p>
+<p>Artık topolojiler kademeli sunucular içeriyor. Bu yapı mesaj izlemeyi oldukça zorlaştırıyor. Sistem yöneticisine 'xxx adresinden gelmesi gereken mesaj gelmedi/yyy adresine gitmesi gereken mesajımız gitmedi' gibi bir soru sorulduğunda aşağıdaki topolojiye göre mesajın takılma ihtimali olan 6 değişik nokta incelenmeli. Bunların üçü de bizim kontrolümüzde olmayan noktalar. İşi daha kompleks hale getiren, birçok anti-spam ve anti-virus çözümünün hata mesajı vermek konusunda isteksiz davranması. Bunun sebebi de anlaşılabilir. Spammer ya da hacker'lar bu hata mesajlarını bilgi toplamak amacıyla kullanabiliyorlar.</p>
+<p><img alt="Image:Lotus Domino Sunucularda Internet Mesajlaşma Problemleri" src="../../../images/imported/lotus-domino-sunucularda-internet-mesajlasma-problemleri-M5.gif" /></p>
+<p>Dikkat edilmesi gereken unsurlardan birisi burada kullanılan gateway'lerin nasıl çalıştıkları. Bazı ürünler mesaj alışverişini izlemek üzerine 'transparent' bir yöntem kullanırlar. SMTP oturumu izlenir, oturum sürecinde gerekli kontroller yapıldıktan sonra (spam puanlaması, ekli dosya kontrolü gibi) oturumun kesilmesi gerekiyorsa araya girip oturumu sonlandırırlar. Diğer çözümlerde ise 'Store\&amp;Forward' yöntemi kullanılır. Yani mesaj bir mesajlaşma sunucusu gibi kabul edilir. Temiz mesajlar bir sonraki sonucuya aktarılır. Her iki durumda da prensip olarak 'gateway' ürünlerini seçerken 'message tracking' imkanı sunan çözümlere öncelik verilmesini tavsiye ediyorum. Çünkü bir çok ürün geriye dönmeleri gereken hata mesajları konusunda çok ketum davranıyorlar.</p>
+<p>İkinci bir nokta da 'recipient-checking' özelliğinin sunulup sunulmad ığı. Özellikle anti-spam yazılımlarının gelen mesajda önce alıcı alanının geçerli olup olmadığını kontrol etmesi gereklidir. Bu kontrol, yazılım ın kendi içindeki adres tabloları kullanılarak (pasif) ya da mesajlaşma sunucusu üzerinden LDAP sorgularıyla canlı olarak (aktif) yapılır. Bu desteği sunmayan servisler mesajlaşma sunucusu üzerinde gereksiz trafik yaratırlar. Bu trafiği küçümsememek gerekir. Gerçekten kirli bir ağ üzerinde (örneğin yeterince kontrol edilmeyen bir datacenter ortamında) bu '<strong>directory-harvest</strong> ' ataklarının mesajlaşma sunucusunun çökmesine neden olduğunu gözlerimle gördüm.</p>
+<p><strong>V. Mesajlaşma Problemlerinin Tespit Edilmesi</strong></p>
+<p>Paylaştığımız dokümanda sorun çözmek amacıyla yapılacak kontrollerle ilgili bir çok öneri var. Giden (ya da gidemeyen) mesajlarla ilgili sorunlarda debug parametreleri en büyük yardımcımız olacaktır. Debug parametreleri log büyüklüklerimizi arttırdığı ve sistemlerimizde yavaşlıklara neden olduğu için gerekmedikçe kullanmamamız gerektiğini hatırlatmak isterim. Nslookup komutu ve/veya daha önce önerdiğim internet sayfaları kanalıyla MX kayıtlarının kontrol edilmesi de epey yardımcı olacaktır.</p>
+<p>Bütün bunların yanısıra mesajlaşma topolojisine hakim olmak çok büyük önem taşıyor. Özellikle çok sunuculu ortamlarda sistemimize giren mesajın nerelerden geçmesi gerektiğini bilmek çoğu zaman hiç bir kontrol yapmamıza gerek kalmadan hatayı bulmamızı sağlar.</p>
+<p>Daha önce yaşamış olduğum örneklerden bir kaç tanesini payla şırsam yararlı olacağını düşünüyorum.</p>
+<ol>
+<li>Çeşitli 'Black List' veritabanları, Trend'in kullandığı '<em>Network Reputation Service</em> ' ya da Cisco'nun kullandığı SenderBase veritabanı gibi kaynaklar global SPAM kaynaklarını network adresleri bazında gruplandırma ve puanlama işini yürütüyor. Daha önce söylediğim gibi bu veritabanlarının TTNet IP blokları hakkında hayli kötü önyargıları bulunuyor ve bu durum karşılaştığımız problemlerin sebepleri arasında ciddi bir y üzde oluşturuyor. Mesaj gönderdiğiniz IP adresi bu bloklar arasındaysa bir çok anti-spam yöntemi hata mesajı vermeden mesajları bloklayabiliyor. Benzer şekilde eğer siz bu yöntemleri kullanıyorsanız mesajlar bir şekilde reddedilebiliyor ya da karantina listelerine aktarılabiliyor.</li>
+</ol>
+<p>Bu IP'lerle ilgili sorgulamalar için liste veritabanlarını kullanmak iyi bir fikir olacaktır. Bu konuda ücretli servis veren siteler, küçük bir ücret karşılığında periyodik raporlama olanakları sağlarken <a href="http://www.mxtoolbox.com/">mxtoolbox.com</a> gibi siteler çok geniş sorgulama imkanı sunmaktadır.</p>
+<ol>
+<li>Temiz bir network adresinden gelen mesaj da SPAM olarak algılanabilir. Karantinaya alınmış bir mesajın header bilgilerini analiz etmek sa ğlıklı bilgi verecektir. Aşağıdaki örnekte SpamAssassin uygulaması taraf ından gerçekleştirilen SPAM puanlamasının sebepleri yer alıyor.</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>X-Spam-Flag: YES
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>X-Spam-Checker-Version: SpamAssassin 3.1.8 (2007-02-13)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>X-Spam-Level: ******
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>X-Spam-Status: Yes, score=6.9 required=5.0 tests­VANCE_FEE_1,DEAR_SOMETHING,
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a> FORGED_MUA_OUTLOOK,FORGED_OUTLOOK_HTML,FORGED_OUTLOOK_TAGS,HTML_MESSAGE,
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a> MIME_HTML_ONLY,MISSING_HEADERS,TO_CC_NONE,X_PRIORITY_HIGH autolearn=no
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a> version=3.1.8
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>X-Spam-Report:
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a> *  0.1 X_PRIORITY_HIGH Sent with &#39;X-Priority&#39; set to high
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a> *  0.2 MISSING_HEADERS Missing To: header
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a> *  1.6 DEAR_SOMETHING BODY: Contains &#39;Dear (something)&#39;
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a> *  0.0 HTML_MESSAGE BODY: HTML included in message
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a> *  0.0 MIME_HTML_ONLY BODY: Message only has text/html MIME parts
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a> *  2.5 FORGED_OUTLOOK_HTML Outlook can&#39;t send HTML message only
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a> *  2.4 FORGED_OUTLOOK_TAGS Outlook can&#39;t send HTML in this format
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a> *  0.1 TO_CC_NONE No To: or Cc: header
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a> *  0.0 ADVANCE_FEE_1 Appears to be advance fee fraud (Nigerian 419)
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a> *  0.0 FORGED_MUA_OUTLOOK Forged mail pretending to be from MS Outlook
+</span></code></pre></div>
+<p><br /></p>
+<p>Bazı durumlarda mesajların neden SPAM olarak işaretlendiğine dair nemli ipuçları bulabilirsiniz. Bu örnekteki mesaj Outlook'dan gönderilmi ş gibi gösterilmiş fakat bunun yanıltıcı olduğu tespit edilmiş.</p>
+<ol>
+<li>Mesajların multipart olarak gönderilmemesinin da SPAM olarak algılanabileceğine dikkat etmemiz gereklidir. Yukarıdaki örnekteki gibi bazı mesajlar 'plain text' olarak hazırlanır fakat içinde HTML tag'leri bulundurur. Bu durum sıklıkla yanlış 'disclaimer' uygulamalarında görülür. Bir örnekte mesajların plain text olarak gittiği fakat disclaimer eklentisinin HTML olduğunu tespit etmiştik.</li>
+</ol>
+<p><img alt="Image:Lotus Domino Sunucularda Internet Mesajlaşma Problemleri" src="../../../images/imported/lotus-domino-sunucularda-internet-mesajlasma-problemleri-M6.gif" /></p>
+<p>Buna benzer ayarlar da SPAM olarak algılanma benzeri problemlere neden olabilmektedir. Genel uygulamada multi-part mesajları ya da HTML mesajları tercih etmekten yanayım. Gönderici adreslerinin düzgün yapılandırılması da önemli. Eğer özel bir ayar yapmazsanız Domino gönderici adresini standart dışı şekillerde oluşturabilir. Örneğin RFC822 ayarlarının düzgün yapılarak "Name_Surname/Acme%Acme " gibi adreslerden kurtulmak gerekir.</p>
+<ol>
+<li>DNS sorunları mesaj gönderiminde tekrarlanması ve dolayısıyla tespit edilmesi güç problemlere neden olmaktadır. Özellikle yerel ağda 'Microsoft DNS Server' gibi çok güvenilir olmayan DNS sunucular kullanıyorsanız zaman zaman MX kayıtlarının sorgulanmasında ya da Router'ın çalışmasında aksaklıklar ortaya çıkar. Bunun en açık örneği aşağıdaki gibi yaşan ır.</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Router: Transferring mail to domain YAHOO.COM (host YAHOO.COM) via SMTP
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Router: Message 003903B3 NOT transferred via SMTP to YAHOO.COM for xxx@yahoo.com from Serdar Basegmez/developi Size: 124K Error transferring to yahoo.com; Some Error Message
+</span></code></pre></div>
+<p><br /></p>
+<p>Aslında YAHOO.COM alan adının MX kaydı vardır. Fakat Router bir an için bu kaydı öğrenemez ve -daha önce söylediğimiz gibi- onun yerine YAHOO.COM için kayıtlı 'A' adresini alır. Bunun devamında adres hafızaya alındığı için sürekli bu işlemi denemeye devam eder. Bu tip hatalar DNS sunucunun kaliteli hizmet vermemesinden kaynaklanır.</p>
+<p>Bu problemler haricinde sizin de paylaşmak istedikleriniz olursa yorumlar ınızla katılabilirsiniz...</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2010 - 2025 Serdar Basegmez – <a href="#__consent">Çerez ayarlarını değiştir</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+
+      
+        <div class="md-footer-meta__source">
+          <a href="https://github.com/sbasegmez/lotusnotus-tr" title="Depoya git" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sbasegmez/lotusnotus-tr
+  </div>
+</a>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Çerez kullanımı</h4>
+<p>Tekrar ziyaretlerinizi ve tercihlerinizi tanımak ve blogumuzun performansını anlamamıza yardımcı olmak için çerezleri kullanıyoruz. Bu amaçla üçüncü taraf araçları da kullanabiliriz. Onayınızla, tüm okuyucularımız için deneyimi iyileştirmemize katkıda bulunuyorsunuz.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Kabul et</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Reddet</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.select", "content.code.annotate", "navigation.top", "navigation.expand", "navigation.instant", "toc.integrate", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
