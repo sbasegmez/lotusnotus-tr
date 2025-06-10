@@ -15,9 +15,6 @@ Bundan bir kaç ay önce [](2010-01-project-vulcan-lotus-notes-ve-gelecegi.md "P
 O zaman sunulan demo, pek kaliteli değildi ve ürünün neye benzediğini yalnızca Lotussphere ziyaretçileri görebilmişlerdi. Geçtiğimiz hafta yapılan Sales Academy toplantısında Avrupa'dan gelen IBM'ciler bu videoyu da paylaştılar bizimle.
 <!-- more -->
 
-<br />
-
-<br />
 
 Video'da dikkat çekici bazı özellikler var. Öncelikle korktuklarımın aksine Project Vulcan yalnızca bir web arabirimi değil. Aynı arabirimi web için de Lotus Notes için de tasarlamışlar ve görüldüğü kadarıyla aralarında hiç bir fark yok.
 

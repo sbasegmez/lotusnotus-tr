@@ -31,9 +31,6 @@ Password reset operasyonu için 'reset' yapabilecek her kullanıcı için ayrı 
 [0B30:009A-0CC4] NAMELookup::<lookup> NumReturned=0, TotalNumReturned=0 match(es) for name='O=Acme'
 ```
 
-<br />
-
-<br />
 
 Bu durumda, certifier bulunamıyor (entry not found in index). Ama bizim durumumuzda:
 
@@ -44,9 +41,6 @@ Bu durumda, certifier bulunamıyor (entry not found in index). Ama bizim durumum
 [0B30:009A-0CC4] NAMELookup::<lookup> NumReturned=2, TotalNumReturned=2 match(es) for name='O=Acme'
 ```
 
-<br />
-
-<br />
 
 Adres defterinde iki adet sertifika dokümanı bulunuyor ki bunun olmamas ı lazım. Hemen '($Users)' görüntüsüne bakıyoruz ve gerçekten iki tane var. İkincisi 'Short Name' alanında 'O=Acme' yazan bir kullanıcı. Bu bir 'replication conflict' de olabilirdi...
 

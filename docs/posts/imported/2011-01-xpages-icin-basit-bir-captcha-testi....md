@@ -50,9 +50,6 @@ switch(captchaLanguage) {
 }
 ```
 
-<br />
-
-<br />
 
 **GÜNCELLEME:**
 8.5.2 öncesi versiyonlarda bir 'serialization' problemi farkettim ve javascript objesini değiştirerek V2.0 olarak [buraya](http://www.developi.com/_files/CaptchaSample_R2.0_201105.zip) yükledim. Obje yapısı ve custom control kodunun değiştiği konusunda bir uyarı yapayım. Diğer diller konusunda yapacağınız değişiklikler de aynı alandan yapılacak...

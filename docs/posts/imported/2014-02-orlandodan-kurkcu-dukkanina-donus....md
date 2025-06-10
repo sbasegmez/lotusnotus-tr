@@ -78,9 +78,6 @@ Ufak tefek birkaç haber daha vermek gerekirse,
 * IBM Social Platform üzerinde geliştirme yapmak isteyenleri hedefleyen Domino-Connections-Sametime kurulu hazır sunucu imajları geçtiğimiz yıl SmartCloud üzerinden kiralanmaya başlanmıştı. Bu yıl içerisinde bunların ücretsiz indirilmesi mümkün olacak.
 * Yıl sonuna doğru Notes Browser plugin için Safari/MacOS desteği çıkması gündemde.
 
-<br />
-
-<br />
 
 ![Image:Orlando’dan Kürkçü Dükkanına dönüş...](../../images/imported/orlandodan-kurkcu-dukkanina-donus-M4.png)
 

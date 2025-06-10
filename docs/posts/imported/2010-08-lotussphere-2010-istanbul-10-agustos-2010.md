@@ -59,6 +59,3 @@ Bu yılki ajandayı da ekliyorum. İki yıldır olduğu gibi bu yıl da sunum ya
 2. **Birleşik İletişim ve İşbirliği'nde En Son Yenilikler : IBM Lotus Sametime 8.5** - Özcan Çavuş, Bilgi Teknolojisi Uzmanı, IBM Türk
 3. **Hillside, Misafir Memnuniyet Anketini Lotus Notes Üzerinden Takip Ediyor**- Serdar Başeğmez, Developi \& Sinan Birinci, Hillside
 
-<br />
-
-<br />

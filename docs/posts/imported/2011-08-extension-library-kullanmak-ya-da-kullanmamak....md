@@ -79,9 +79,6 @@ RPC objesinde ise extlib bize bir javascript objesi yaratıyor. Bu obje, öncede
 </xe:jsonRpcService>
 ```
 
-<br />
-
-<br />
 
 Bu örnekte iki metod yaratılmış. 'getUserName' metodu kullanıcı ismini döndürüyor, 'add' metodu, verilen iki parametrenin toplamını. Client-side javascript'te ise bu objeler şu şekilde çağrılıyor:
 
@@ -97,9 +94,6 @@ deferred.addCallback(function(result) {
 });
 ```
 
-<br />
-
-<br />
 
 **4.Tanıdık kontroller**
 Web uygulamalarında hem kullanımı, hem de geliştirmeyi zorlaştıran unsurlardan birisi de klasik uygulamalarda varolan bazı kontrollerin web tarafında olmamasıdır. Extlib, burada çok önemli kolaylıklar sağlıyor.

@@ -102,8 +102,5 @@ Neyse, blogları özetlemeye başlayalım:
 * Apple cihazlarda uzaktan silme fonksiyonu yalnızca Traveler verilerini silecek şekilde kullanılabiliyor
 * Domino Mail-in database ve group adreslerine lookup yapılabilecek.
 
-<br />
-
-<br />
 
 Daha fazlasını da görebiliriz, hatta kalın :)

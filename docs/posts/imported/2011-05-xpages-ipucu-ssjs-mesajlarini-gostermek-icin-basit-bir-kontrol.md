@@ -44,9 +44,6 @@ Ben bu iş için basit bir custom control tasarladım.
 </xp:view>
 ```
 
-<br />
-
-<br />
 
 viewScope ya da sessionScope'a yerleştirdiğimiz MessageText ve MessageType parametrelerini ayarladığımızda bu mesaj görüntüleniyor. SSJS tarafında nasıl kullanıyoruz?
 
@@ -65,9 +62,6 @@ function birFonksiyon() {
 }
 ```
 
-<br />
-
-<br />
 
 Sayfa tekrar yüklendiğinde (full/partial refresh), viewScope veya sessionScope parametrelerini kontrol ediyoruz, mesaj varsa gösteriyoruz ve scope parametresini temizleyerek mesajın ikinci kez gösterilmesinin önüne geçiyoruz. Scope değişkeni bu aşamada değil de, eklenecek bir 'kapat' tuşuna basıldığında temizlenebilir. Kontrol farklı şekillerde geliştirilebilir. MessageType değerleri ise (Info, Warning, Error...) ilgili imaj dosyalarına göre belirleniyor.
 

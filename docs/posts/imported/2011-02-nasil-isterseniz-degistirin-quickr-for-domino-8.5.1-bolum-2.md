@@ -39,9 +39,6 @@ var res = this.transformContent(xmldoc, this._xsl, _xslParams);
 ....
 ```
 
-<br />
-
-<br />
 
 "*this.getXmlDocFromString()* " veya "*this.transformContent()* " fonksiyonlarını burada aramayın, onlar "*quickr.widgets._transformer* " widget'ından miras alınmışlar. Bu kodun yaptığı iş çok basit aslında. Bir XML DOM objesi yaratılıyor (burada boş bir tane), içine bir takım ek parametreler konuluyor ve bir XSL dönüşümüyle (XSLT) HTML DOM objesi oluşturuluyor. Bu objenin içeriği deklarasyonun yapıldığı "div" objesinin (page.htm dosyasında) içine konuluyor. Bunu daha detaylı olarak önceki yazıda anlatmıştım.
 
@@ -49,9 +46,6 @@ var res = this.transformContent(xmldoc, this._xsl, _xslParams);
 <div dojoType="quickr.widgets.misc.footer"></div>
 ```
 
-<br />
-
-<br />
 
 Varsayılan XSL dosyanın da (footer.xsl) aynı klasörde (\\html\\qphtml\\widgets\\misc) bulunduğunu farketmişsinizdir. Kod, eğer "xslSource" parametresiyle tanımlanmadıysa varsayılanı kullanıyor.
 
@@ -83,9 +77,6 @@ Burası önemli. "xslSource" parametresi kullanışlı bir şey. Bu sayede widge
 ...
 ```
 
-<br />
-
-<br />
 
 İlk kısım XSLT dönüşümü sırasında kullanılacak parametreleri tanımlıyor. Javascript kodunda bu parametrelerin değerlerini ayarlamıştık. "*{$TABLE_SUMMARY}* " notasyonunda gördüğünüz gibi HTML içinde parametreleri kullanabiliyoruz. Çok dilli metinlerinizi "*textlocalizer* " widget'ını kullanarak yerleştirebiliyorsunuz. En önemli kısım, XSL içinde seçici çıktı verebiliyorsunuz. Örneğin Quickr Connector programcığını yüklemek için verdiğimiz link, offline kullanıcılarda görünmeyecek şekilde ayarlanmış.
 
@@ -95,9 +86,6 @@ XSL dosyanın bir kopyasını kendi tema klasörüme kopyaladım ve gerekli değ
 <div dojoType="quickr.widgets.misc.footer" xslSource="/qphtml/skins/lugtheme/widgets/cFooter.xsl"></div>
 ```
 
-<br />
-
-<br />
 
 Detaylara girmeyelim, sadece HTML değişiklikleri yaptım bu XSL içinde. 4 kolonlu tabloyu üç kolona indirdim, büyük kolonlu kısma da sponsor logolarını yerleştirdim. İki konu var dikkat edilmesi gereken. görsel ayarlamaları CSS dosyasına bırakın ve bu XSL'i çok değiştirmeyin. Tarayıcı ve sunucu bunu önbelleğe alıyorlar. Ayrıca XSL dosyanın içinde XML notasyonu kullanın. Yani, tag'lerinizi kapatın (örneğin, çoğu programcı "\< br \>" tag'ini kapatmaz)...
 
@@ -122,9 +110,6 @@ Print "["+result(0)+"]"
 End If
 ```
 
-<br />
-
-<br />
 
 ```
 ...
@@ -138,9 +123,6 @@ End If
 ...
 ```
 
-<br />
-
-<br />
 
 Bu kolay kısım :) Zor olan bölüm ise içeriği ve görünümü değiştirmek. Şu business card widget'ını inceleyelim (/qphtml/widgets/people/personcard.js):
 
@@ -169,9 +151,6 @@ this._xmlString = "";
 ...
 ```
 
-<br />
-
-<br />
 
 Burada küçük bir hile var. Quickr'da kişi kayıtları internal ya da external olabilir. Bizim kodumuz önce ilkini deniyor, olmazsa ikinciyi.
 
@@ -201,9 +180,6 @@ var xsl = "/qphtml/skins/lugtheme/widgets/cpersoncard.xsl";
 })
 ```
 
-<br />
-
-<br />
 
 Yeni bir de XSL dosyası yarattım ve kendi widget klasörüme yerleştirdim. Bu yeni dosyada "Send Mail" tuşunun yanına da şunu ekledim:
 
@@ -216,9 +192,6 @@ Yeni bir de XSL dosyası yarattım ve kendi widget klasörüme yerleştirdim. Bu
 </li>
 ```
 
-<br />
-
-<br />
 
 Şimdi widget registry'ye girişmemiz gerekecek. Çünkü sistem bizim yazdığımız widget'tan haberdar değil. QuickrD bu iş için bir javascript dosyası bulunduruyor (*/qphtml/widgets/resources/widgetRegistryConfig_ext.js*). Bu dosya sayesinde widget ekleyebiliyor ya da değiştirebiliyorsunuz. Yukarıda link'ini verdiğim sunum bu konuyu güzel örneklerle açıklamış. Ben şöyle bir ek yaparak normal personcard widget'ını kendiminkiyle değiştirdim:
 
@@ -251,9 +224,6 @@ use: "lugwidgets.personcard"
 }
 ```
 
-<br />
-
-<br />
 
 Aynı dosyada çoklu dil desteği için yazdığım kendi dil dosyalarımı da eklemiş oldum. Sonuç böyle bir şey:
 
@@ -278,9 +248,6 @@ ca:role="rol - owner, reader, vs.">
 </content>
 ```
 
-<br />
-
-<br />
 
 Burada yapılabilecek şey (ya da benim yapacağım şey) bu widget'ı geliştirip ek bilgileri bir agent'dan alıp JSON ya da XML formatında XSLT sürecine sokmak. Bunu yapabilirsem buraya eklerim. Bu arada daha mantıklı bir fikri olan beri gelsin :)))
 

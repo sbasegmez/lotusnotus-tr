@@ -130,9 +130,6 @@ R8.5 itibariyle gelen DCT, sunucu konfigürasyonunuzu inceleyip daha verimli bir
 * Policy'ler ve install paketleriyle sertifika dağıtımı mümkün hale geliyor (8.5.1 ile). Daha önce programatik olarak çözülmesi gereken bir sorun da policy'ler yardımıyla çözüldü. Sistem yöneticisi, seçtiği sertifikaları (cross certification, internet certifier, trusted root certifier...),
 * 8.5 itibariyle yeni ve gelişmiş bir '**Roaming User**' desteği sunuluyor. Hatta 8.5.1 ile birlikte kullanıcının workspace ikonları bile gezicilik kapsamına alındı.
 
-<br />
-
-<br />
 
 **9. Geriye Doğru Uyumluluk**
 

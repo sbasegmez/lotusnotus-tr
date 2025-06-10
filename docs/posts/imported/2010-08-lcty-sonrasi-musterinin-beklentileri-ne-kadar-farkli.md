@@ -28,9 +28,6 @@ Tüm bu oturum aralarında konuştuğum müşterilerin gündemi, genel organizas
 | **IBM ne sundu?**                                                                                               | **Müşteri neyi merak etti?**                                                                                                                                                                                                                         |
 | Sosyal yazılımlar Sosyal Ağların iş uygulamaları Takım işbirliği Mobil işbirliği Wikiler, bloglar Bulut bilişim | Domino ile SAP nasıl konuşur? Lotus'dan raporlama nasıl yapılır? Lotus Workflow ne olacak? Blackberry'den onay vermek mümkün mü? Kalite dokümantasyonu, Doküman tabanlı iş akışları nasıl yapılacak? Yeni versiyonların Türkçe'leri neden gecikiyor? |
 
-<br />
-
-<br />
 
 Hem IBM için, hem de biz çözüm ortakları için bir ders olabilir mi bu? Daha çok pazar araştırması, daha çok müşteri toplantısı ve daha gerçekçi olmak gerekiyor sanırım...
 

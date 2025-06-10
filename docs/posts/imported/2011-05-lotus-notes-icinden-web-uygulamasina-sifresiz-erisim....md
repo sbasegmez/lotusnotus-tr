@@ -61,9 +61,6 @@ facesContext.getExternalContext().redirect(rUrl)
 </xp:view>
 ```
 
-<br />
-
-<br />
 
 Burada cookie yaratırken kullandığımız alan adına dikkat. Bu alan adının LtpaToken konfigürasyonunda tanımlananla aynı olması gerekiyor. Bunu dinamik olarak da çekebilirdik ama bu biraz pahalı bir yöntem olurdu.
 
@@ -98,9 +95,6 @@ public void NotesMain() {
 }
 ```
 
-<br />
-
-<br />
 
 Token'ı yarattıktan sonra geri göndermemiz gerekiyor. Bu iş için geçici bir Notes dokümanı kullanıyoruz. Eğer bir sorun olursa aynı yöntemle hata mesajı döndüreceğiz.
 
@@ -132,9 +126,6 @@ Token'ı yarattıktan sonra geri göndermemiz gerekiyor. Bu iş için geçici bi
       End If
 ```
 
-<br />
-
-<br />
 
 Burada '**/test/redirect.nsf/redirect.xsp** ' yukarıda belirttiğim ve yönlendirme için kullandığımız xPage adresi. '**TestAuth** ' ise yarattığımız Java agent'ının ismi. Bu kod bir form içerisinde button'a bağlanabilir, değişikliklerle daha kullanışlı bir hale getirilebilir.
 

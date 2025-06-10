@@ -87,9 +87,6 @@ S: 221 Bye
 
 ```
 
-<br />
-
-<br />
 
 **III. Mesajlar, Kodlama ve MIME**
 

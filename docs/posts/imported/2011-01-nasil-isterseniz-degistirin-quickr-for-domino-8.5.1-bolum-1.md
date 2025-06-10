@@ -56,9 +56,6 @@ CSS dosyasını page.htm içinde HEAD kısmında çağırabiliriz. İki seçene�
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 ```
 
-<br />
-
-<br />
 
 Daha önce söylediğim gibi ben bunu tercih etmedim. Her değişiklikten sonra tekrar tekrar upload etmek zor geldiği için kendi tema klasörümde bir CSS dosyası yarattım:
 
@@ -66,9 +63,6 @@ Daha önce söylediğim gibi ben bunu tercih etmedim. Her değişiklikten sonra 
 <link rel="stylesheet" type="text/css" href="/qphtml/skins/lugtheme/css/stylesheet.css" />
 ```
 
-<br />
-
-<br />
 
 **Logoyu değiştirelim:**
 page.htm sayfasını incelerseniz logonun standart bir IMG tag'i olarak yerleştirildiğini görebilirsiniz:
@@ -77,9 +71,6 @@ page.htm sayfasını incelerseniz logonun standart bir IMG tag'i olarak yerleşt
 <img src="/domjs/dojo-1.3.2/dojo/resources/blank.gif" alt="@@[BANNER.LOGO_ALT]@@" class="lotusLogo" id="lotusLogo"/>
 ```
 
-<br />
-
-<br />
 
 Bu dosyayı CSS düzeyinde (background-image) değiştirebiliyorsunuz. Fakat ben HTML kısmını tekrar yazmayı tercih ettim.
 
@@ -91,9 +82,6 @@ CSS File:
 .lugLogo {position:absolute; z-index:1;}
 ```
 
-<br />
-
-<br />
 
 **Breadcrumb'ın yerini değiştirelim:**
 Breadcrumb nedir diye merak edenler için söyleyelim, kelime anlamı ekmek kırıntısı. Hansel ile Gratel'in hikayesi gibi, dikey navigasyonda o anda nerede olduğunuzu ve nerelerden geçtiğinizi gösteren bölüme breadcrumb deniyor.
@@ -116,9 +104,6 @@ div.qkrActions { float:right; width:auto; margin-top:0px; margin-right:-5px;}
 div.lotusMeta div.qkrTextField {width:auto !important; }
 ```
 
-<br />
-
-<br />
 
 **Chrome problemini çözelim:**
 Tasarımınızı değişik tarayıcılarla test etmenizde fayda var. Örneğin Chrome'da ekranın sağ üstünde şöyle bir abukluk görebilirsiniz:
@@ -135,9 +120,6 @@ dojo.addOnLoad(
   });
 ```
 
-<br />
-
-<br />
 
 **Alt kısmı güncelleyelim:**
 Footer alanı biraz ilginç. Biraz uğraşmam gerekti ama nasıl çalıştığını anladım sonunda.Page.htm dosyasında footer alanının bir dojo widget'ı gibi eklendiğini görebilirsiniz...
@@ -146,9 +128,6 @@ Footer alanı biraz ilginç. Biraz uğraşmam gerekti ama nasıl çalıştığı
 <div dojoType="quickr.widgets.misc.footer"></div>
 ```
 
-<br />
-
-<br />
 
 Bu widget, Javascript API'si tarafından işlemden geçiriliyor. Bu yapılırken de "\\domino\\html\\qphtml\\widgets\\misc" klasöründe bulunan bir XSL dosyası (footer.xsl) kullanılıyor. Bilmeyenler için XSL, XML bir bilgiyi başka bir XML'e (bizim durumumuzda HTML'e) çevirmek için kullanılır. Bu dosyayı kendi tema klasörlerimize kopyaladıktan sonra widget tanımını şu şekilde değiştiriyoruz:
 
@@ -156,9 +135,6 @@ Bu widget, Javascript API'si tarafından işlemden geçiriliyor. Bu yapılırken
 <div dojoType="quickr.widgets.misc.footer" xslSource="/qphtml/skins/lugtheme/widgets/cFooter.xsl"></div>
 ```
 
-<br />
-
-<br />
 
 ![Image:Nasıl isterseniz değiştirin: Quickr for Domino 8.5.1 (Bölüm 1)](../../images/imported/nasil-isterseniz-degistirin-quickr-for-domino-8-5-1-bolum-1-M6.gif)
 
@@ -194,9 +170,6 @@ Tema tabanlı çoklu dil içeriği string depoları olarak "/domino/html/qphtml/
 ....
 ```
 
-<br />
-
-<br />
 
 Bu dosyaları doğrudan değiştirebilirsiniz fakat bunu çok önermiyorum. Herhangi bir upgrade ya da fix pack sonrasında bu dosyalar ilk hallerine dönebilir. Ben benzer bir klasör yapısını kendi tema klasörüme kurdum ve gereken string'leri buralara yükledim. Bunu yaparken UTF8 dosya formatını kullanmaya da özen gösterdim. Sonrasında Javascript motoruna benim de dil dosyalarımı yüklemesini söylemem gerekiyordı:
 
@@ -204,9 +177,6 @@ Bu dosyaları doğrudan değiştirebilirsiniz fakat bunu çok önermiyorum. Herh
 <script type="text/javascript">q_LocaleUtils.loadStringFiles("LUG_ext", "/qphtml/skins/lugtheme", "quickrstrings");</script>
 ```
 
-<br />
-
-<br />
 
 Bu kodu sayfanın HEAD bölümüne yerleştirebilirsiniz. Şimdilik böyle devam ediyoruz, en son tüm bu script'leri toparlayarak tek bir dosyaya koyacağız ve işimiz daha şık görünecek :) Yüklediğiniz string'leri göstermeniz gerekirse iki seçeneğiniz var: Dojo veya Javascript:
 
@@ -216,9 +186,6 @@ Bu kodu sayfanın HEAD bölümüne yerleştirebilirsiniz. Şimdilik böyle devam
 <script>alert(q_LocaleUtils.getStringResource("CUSTOM.CUSTOMKEY"));</script>
 ```
 
-<br />
-
-<br />
 
 Javascript notasyonunu özellikle dillere göre değişik link'lere ihtiyaç duyarsanız kullanabilirsiniz.
 

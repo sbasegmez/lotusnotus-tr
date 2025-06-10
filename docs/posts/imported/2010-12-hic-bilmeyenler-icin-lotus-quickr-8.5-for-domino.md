@@ -82,8 +82,5 @@ En güzeli [Greenhouse](http://greenhouse.lotus.com/) sitesini kullanmak... Bu s
 * Quickr'a yüklenecek dosyaların boyutu varsayılan olarak 10 MB ile sınırlandırılmış. Bunu arttırmak için iki farklı alanı değiştirmeniz gerekiyor. Birisi Quickr içinde, diğeri Domino sunucusunda. Buna dikkat etmenizi tavsiye ederim.
 * Ölçek önemli bir seçim kriteri. Quick for Domino, yaklaşık olarak 800-900 kullanıcı için tasarlanmış. Bu kısıtlamanın sebebi, place kullanıcılarının veritabanlarındaki ACL kayıtlarında yeralıyor olması. ACL kayıtlarında da sınırlama var. Eğer 'Expanded Membership' adlı bir mekanizmayı aktif hale getirirseniz Quickr, dizin üzerinde otomatik yönetilen gruplar tanımlar. ACL'lere de doğrudan bu gruplar yerleştirilir. 'Expanded Membership', 4000 civarında kullanıcı desteklemenizi sağlasa da, belli noktalarda bazı [kısıtlamalar](http://www-10.lotus.com/ldd/lqwiki.nsf/dx/Expanded_membership_qd85) içerir.
 
-<br />
-
-<br />
 
 Şimdilik bu kadar. Quickr 8.5 itibariyle ürün dokümantasyonunun Infocenter'dan [wiki tarafına taşındığı](http://www-10.lotus.com/ldd/lqwiki.nsf/xpViewCategories.xsp?lookupName=Lotus%20Quickr%208.5%20for%20Domino%20documentation) bilgisini de verelim. Bir kaç [video linkini](http://www-10.lotus.com/ldd/lqwiki.nsf/dx/Quickr_8.5_Videos) de paylaşalım ve diğer soruları alalım :)))

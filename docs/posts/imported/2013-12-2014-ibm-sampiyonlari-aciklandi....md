@@ -37,8 +37,5 @@ IBM diğer markalarda uzun bir süredir düzenlediği 'IBM Champions' programın
 * Topluluğun büyümesine yardımcı olmak,
 * Yapıcı ve profesyonel bir şekilde pozitif ya da negatif geribildirimlerde bulunmak,
 
-<br />
-
-<br />
 
 Onuncu defa söz veriyorum, daha sık blog yazacağım. Görmek istediğiniz konuları bana söyleyin. En azından buradayız okuyoruz demeniz yeterli ki motive olabileyim :)

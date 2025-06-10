@@ -73,8 +73,5 @@ Yasak kalkar kalkmaz yağmur gibi bloglar yazılmaya başlandı. Bir kaç özell
 
 * **Silent fail-over** özelliği, sunucu erişilebilir olmadığında kullanıcıya uyarı vermeden diğer cluster sunucusuna ya da lokal replikaya geçmeyi sağlıyor.
 
-<br />
-
-<br />
 
 \* Tabi tüm bu özelliklerin değişebileceğini belirtelim. Bunlar IBM tarafından kesinlikle garanti edilmiş özellikler değil...
